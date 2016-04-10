@@ -1,0 +1,72 @@
+<?php
+/**
+ * @package hello-bruce-campbell
+ * @version 1.0
+ */
+/*
+ * Plugin Name: Hello Bruce Campbell
+ * Plugin URI: https://wordpress.org/plugins/hello-bruce-campbell/
+ * Description: When activated you will randomly see a quote from a Bruce Campbell movie or TV show in the upper right of your admin screen on every page. A tip of the hat to Matt Mullenweg for the original code.
+ * Author: Pete Nelson
+ * Version: 1.0
+ * Author URI: https://petenelson.io
+*/
+
+function hello_bruce_campbell_get_quote() {
+
+	$quotes = array(
+		"Shop smart. Shop S-Mart.",
+		"Hail to the king, baby.",
+		"Gimme some sugar, baby.",
+		"Good. Bad. I'm the guy with the gun.",
+		"Well hello Mister Fancypants.",
+		"Groovy",
+		"Come get some.",
+		"That's just what we call pillow talk, baby, that's all.",
+		"Good. Bad. I'm the guy with the gun.",
+		"It's a trick. Get an axe.",
+		"My name is Ash and I am a slave.",
+		"You bastards, why are you torturing me like this? Why?",
+		"Gimme back my hand... GIMME BACK MY HAND!",
+		"Let's head on down into that cellar and carve ourselves a witch.",
+		"You know spies... bunch of bitchy little girls.",
+		"I think you know what I'm gettin' at Mr. President. We're gonna kill us a mummy.",
+		"Your soul suckin' days are over, amigo!",
+		"Gadzooks, if I were a woman I'd kiss myself!",
+		"Never look too deep into the mind of a lawyer.",
+		);
+
+	$quotes = apply_filters( 'hello-bruce-campbell-quotes', $quotes );
+
+	// And then randomly choose a quote
+	return trim( wptexturize( $quotes[ mt_rand( 0, count( $quotes ) - 1 ) ] ) );
+}
+
+/* This just echoes the chosen quote, we'll position it later */
+function hello_bruce_campbell() {
+	$chosen = hello_bruce_campbell_get_quote();
+	echo "<p id='hello-bruce-campbell'>$chosen</p>";
+}
+
+// Now we set that function up to execute when the admin_notices action is called
+add_action( 'admin_notices', 'hello_bruce_campbell' );
+
+// We need some CSS to position the paragraph
+function hello_bruce_campbell_css() {
+	// This makes sure that the positioning is also good for right-to-left languages
+	$x = is_rtl() ? 'left' : 'right';
+
+	echo "
+	<style type='text/css'>
+	#hello-bruce-campbell {
+		float: $x;
+		padding-$x: 15px;
+		padding-top: 5px;		
+		margin: 0;
+		font-size: 11px;
+	}
+	</style>
+	";
+}
+
+add_action( 'admin_head', 'hello_bruce_campbell_css' );
