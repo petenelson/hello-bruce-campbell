@@ -25,9 +25,9 @@ function hello_bruce_campbell_get_quote() {
 		"That's just what we call pillow talk, baby, that's all.",
 		"Good. Bad. I'm the guy with the gun.",
 		"It's a trick. Get an axe.",
-		"My name is Ash and I am a slave.",
+		"My name is Ash, and I am a slave.",
 		"You bastards, why are you torturing me like this? Why?",
-		"Gimme back my hand... GIMME BACK MY HAND!",
+		"Give me back my hand... GIVE ME BACK MY HAND!",
 		"Let's head on down into that cellar and carve ourselves a witch.",
 		"You know spies... bunch of bitchy little girls.",
 		"I think you know what I'm gettin' at Mr. President. We're gonna kill us a mummy.",
@@ -44,29 +44,32 @@ function hello_bruce_campbell_get_quote() {
 
 /* This just echoes the chosen quote, we'll position it later */
 function hello_bruce_campbell() {
-	$chosen = hello_bruce_campbell_get_quote();
-	echo "<p id='hello-bruce-campbell'>$chosen</p>";
+	$quote = apply_filters( 'hello-bruce-campbell-quote', hello_bruce_campbell_get_quote() );
+	?>
+		<p id='hello-bruce-campbell'><?php echo esc_html( $quote ); ?></p>
+	<?php
 }
 
-// Now we set that function up to execute when the admin_notices action is called
-add_action( 'admin_notices', 'hello_bruce_campbell' );
-
-// We need some CSS to position the paragraph
+/* We need some CSS to position the paragraph */
 function hello_bruce_campbell_css() {
 	// This makes sure that the positioning is also good for right-to-left languages
 	$x = is_rtl() ? 'left' : 'right';
 
-	echo "
+	?>
 	<style type='text/css'>
-	#hello-bruce-campbell {
-		float: $x;
-		padding-$x: 15px;
-		padding-top: 5px;		
-		margin: 0;
-		font-size: 11px;
-	}
+		#hello-bruce-campbell {
+			float: <?php echo $x; ?>;
+			padding-<?php echo $x; ?>: 15px;
+			padding-top: 5px;		
+			margin: 0;
+			font-size: 11px;
+		}
 	</style>
-	";
+	<?php
 }
 
+/* Output the quote */
+add_action( 'admin_notices', 'hello_bruce_campbell' );
+
+/* Output the CSS */
 add_action( 'admin_head', 'hello_bruce_campbell_css' );
