@@ -1,15 +1,13 @@
 <?php
-/**
- * @package hello-bruce-campbell
- * @version 1.0
- */
 /*
  * Plugin Name: Hello Bruce Campbell
  * Plugin URI: https://wordpress.org/plugins/hello-bruce-campbell/
  * Description: When activated you will randomly see a quote from a Bruce Campbell movie or TV show in the upper right of your admin screen on every page. A tip of the hat to Matt Mullenweg for the original code.
  * Author: Pete Nelson
- * Version: 1.0
- * Author URI: https://petenelson.io
+ * Version: 1.0.1
+ * Author URI: https://github.com/petenelson/hello-bruce-campbell
+ * @package hello-bruce-campbell
+ * @version 1.0.1
 */
 
 function hello_bruce_campbell_get_quote() {
@@ -46,7 +44,7 @@ function hello_bruce_campbell_get_quote() {
 function hello_bruce_campbell() {
 	$quote = apply_filters( 'hello-bruce-campbell-quote', hello_bruce_campbell_get_quote() );
 	?>
-		<p id='hello-bruce-campbell'><?php echo esc_html( $quote ); ?></p>
+		<p id="hello-bruce-campbell-quote"><?php echo esc_html( $quote ); ?></p>
 	<?php
 }
 
@@ -56,8 +54,8 @@ function hello_bruce_campbell_css() {
 	$x = is_rtl() ? 'left' : 'right';
 
 	?>
-	<style type='text/css'>
-		#hello-bruce-campbell {
+	<style type="text/css">
+		#hello-bruce-campbell-quote {
 			float: <?php echo $x; ?>;
 			padding-<?php echo $x; ?>: 15px;
 			padding-top: 5px;		
