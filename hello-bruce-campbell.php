@@ -10,7 +10,7 @@
  * @version 1.0.1
 */
 
-function hello_bruce_campbell_get_quote() {
+function hello_bruce_campbell_get_quotes() {
 
 	$quotes = array(
 		"Shop smart. Shop S-Mart.",
@@ -34,15 +34,21 @@ function hello_bruce_campbell_get_quote() {
 		"Never look too deep into the mind of a lawyer.",
 		);
 
-	$quotes = apply_filters( 'hello-bruce-campbell-quotes', $quotes );
+	return apply_filters( 'hello-bruce-campbell-quotes', $quotes );
+
+}
+
+function hello_bruce_campbell_get_quote() {
+
+	$quotes = hello_bruce_campbell_get_quotes();
 
 	// And then randomly choose a quote
-	return trim( wptexturize( $quotes[ mt_rand( 0, count( $quotes ) - 1 ) ] ) );
+	return trim( $quotes[ mt_rand( 0, count( $quotes ) - 1 ) ] );
 }
 
 /* This just echoes the chosen quote, we'll position it later */
 function hello_bruce_campbell() {
-	$quote = apply_filters( 'hello-bruce-campbell-quote', hello_bruce_campbell_get_quote() );
+	$quote = wptexturize( apply_filters( 'hello-bruce-campbell-quote', hello_bruce_campbell_get_quote() ) );
 	?>
 		<p id="hello-bruce-campbell-quote"><?php echo esc_html( $quote ); ?></p>
 	<?php
