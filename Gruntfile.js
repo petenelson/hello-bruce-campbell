@@ -37,6 +37,16 @@ module.exports = function( grunt ) {
 			} // wp
 		},
 
+		wp_readme_to_markdown: {
+			options: {
+				screenshot_url: "https://raw.githubusercontent.com/petenelson/hello-bruce-campbell/master/assets/{screenshot}.png",
+				},
+			your_target: {
+				files: {
+					'README.md': 'readme.txt'
+				}
+			},
+		},
 
 		phplint: {
 			options: {
@@ -64,6 +74,8 @@ module.exports = function( grunt ) {
 
 	// Register tasks
 	grunt.registerTask( 'default', [  ] );
+
+	grunt.registerTask( 'readme', ['wp_readme_to_markdown'] );
 
 	grunt.registerTask( 'build', [ 'default', 'clean', 'copy' ] );
 

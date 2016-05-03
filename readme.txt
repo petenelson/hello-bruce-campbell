@@ -23,13 +23,18 @@ When activated you will randomly see a quote from a Bruce Campbell TV show or mo
 
 == Changelog ==
 
+= v1.1.0 ???, 2016 =
+* WP-CLI support
+* REST API support
+
 = v1.0.1 April 12, 2016 =
 * Initial release
 
 == Upgrade Notice ==
 
-= v1.0.1 April 12, 2016 =
-* Initial release
+= v1.1.0 ???, 2016 =
+* WP-CLI support
+* REST API support
 
 
 == Frequently Asked Questions ==
