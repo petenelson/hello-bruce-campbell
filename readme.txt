@@ -1,7 +1,7 @@
 === Hello Bruce Campbell ===
 Contributors: gungeekatx
 Requires at least: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 Tested up to: 4.5
 Tags: hello, bruce campbell
 Donate link: https://github.com/petenelson/hello-bruce-campbell
@@ -25,7 +25,7 @@ When activated you will randomly see a quote from a Bruce Campbell TV show or mo
 
 = v1.1.0 ???, 2016 =
 * WP-CLI support
-* REST API support
+* REST API support (requires WP 4.4)
 
 = v1.0.1 April 12, 2016 =
 * Initial release
