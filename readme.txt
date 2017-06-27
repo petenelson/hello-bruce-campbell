@@ -2,7 +2,7 @@
 Contributors: gungeekatx
 Requires at least: 4.0
 Stable tag: 1.0.1
-Tested up to: 4.7
+Tested up to: 4.8
 Tags: hello, bruce campbell
 Donate link: https://github.com/petenelson/hello-bruce-campbell
 License: GPLv2 or later
