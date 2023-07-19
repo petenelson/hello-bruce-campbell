@@ -1,0 +1,14 @@
+/.wordpress-org
+/.git
+/.github
+/node_modules
+/vendor
+
+.distignore
+.gitignore
+build-release.sh
+composer.json
+composer.lock
+package.json
+package-lock.json
+readme.MD
