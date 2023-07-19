@@ -32,6 +32,7 @@ function hello_bruce_campbell_get_quotes() {
 		"Your soul suckin' days are over, amigo!",
 		"Gadzooks, if I were a woman I'd kiss myself!",
 		"Never look too deep into the mind of a lawyer.",
+		"Pizza Poppa always gets paid!",
 		);
 
 	return apply_filters( 'hello-bruce-campbell-quotes', $quotes );
