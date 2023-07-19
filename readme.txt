@@ -1,7 +1,7 @@
 === Hello Bruce Campbell ===
 Contributors: gungeekatx
 Requires at least: 4.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Tested up to: 6.2
 Tags: hello, bruce campbell
 Donate link: https://github.com/petenelson/hello-bruce-campbell
