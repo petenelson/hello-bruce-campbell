@@ -1,20 +1,12 @@
 {
-  "name": "hello-bruce-campbell",
-  "version": "1.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/petenelson/hello-bruce-campbell"
-  },
-  "license": "GPL2+",
-  "homepage": "https://github.com/petenelson/hello-bruce-campbell",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "^0.8.0",
-    "grunt-phpunit": "^0.3.6",
-    "grunt-wp-i18n": "^0.5.4",
-    "load-grunt-tasks": "^3.5.0",
-    "phplint": "^1.7.1"    
-  }
+	"name": "hello-bruce-campbell",
+	"version": "1.0.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/petenelson/hello-bruce-campbell"
+	},
+	"license": "GPL2+",
+	"homepage": "https://github.com/petenelson/hello-bruce-campbell",
+	"dependencies": {},
+	"devDependencies": {}
 }
