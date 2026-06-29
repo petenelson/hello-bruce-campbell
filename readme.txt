@@ -1,7 +1,7 @@
 === Hello Bruce Campbell ===
 Contributors: gungeekatx
 Requires at least: 4.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Tested up to: 7.0
 Tags: hello, bruce campbell
 Donate link: https://github.com/petenelson/hello-bruce-campbell
@@ -23,7 +23,7 @@ When activated you will randomly see a quote from a Bruce Campbell TV show or mo
 
 == Changelog ==
 
-= v1.0.3 Jun 29, 2024 =
+= v1.0.4 Jun 29, 2024 =
 * Added docblocks to PHP functions. No functional code changes.
 
 = v1.0.2 Jul 19, 2023 =
