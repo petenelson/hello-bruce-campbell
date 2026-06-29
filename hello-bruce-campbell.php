@@ -10,6 +10,11 @@
  * @version 1.0.3
 */
 
+/**
+ * Returns an array of Bruce Campbell quotes.
+ *
+ * @return array
+ */
 function hello_bruce_campbell_get_quotes() {
 
 	$quotes = array(
@@ -36,9 +41,13 @@ function hello_bruce_campbell_get_quotes() {
 		);
 
 	return apply_filters( 'hello-bruce-campbell-quotes', $quotes );
-
 }
 
+/**
+ * Returns a single randomly selected Bruce Campbell quote.
+ *
+ * @return string
+ */
 function hello_bruce_campbell_get_quote() {
 
 	$quotes = hello_bruce_campbell_get_quotes();
@@ -47,7 +56,11 @@ function hello_bruce_campbell_get_quote() {
 	return trim( $quotes[ mt_rand( 0, count( $quotes ) - 1 ) ] );
 }
 
-/* This just echoes the chosen quote, we'll position it later */
+/**
+ * Outputs the Bruce Campbell quote HTML for display in the admin area.
+ *
+ * @return void
+ */
 function hello_bruce_campbell() {
 	$quote = wptexturize( apply_filters( 'hello-bruce-campbell-quote', hello_bruce_campbell_get_quote() ) );
 	?>
@@ -55,7 +68,11 @@ function hello_bruce_campbell() {
 	<?php
 }
 
-/* We need some CSS to position the paragraph */
+/**
+ * Outputs inline CSS to position the quote in the admin header.
+ *
+ * @return void
+ */
 function hello_bruce_campbell_css() {
 	// This makes sure that the positioning is also good for right-to-left languages
 	$x = is_rtl() ? 'left' : 'right';
